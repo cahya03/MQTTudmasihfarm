@@ -31,7 +31,7 @@ def on_disconnect(self, mosq, rc):
 		pass
 
 
-mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
+mqttc = mqtt.Client()
 mqttc.username_pw_set(MQTT_User, password=MQTT_Password)
 
 # Assign event callbacks
