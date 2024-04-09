@@ -21,12 +21,16 @@ def Sensor_Data_Handler(Topic, jsonData):
 	json_Dict = json.loads(jsonData)
 	t = json_Dict['temperature']
 	print(t)
-	if (t < 29.00):
+    if (t > 1.0):
+        alert = False;
+	elif (t > 20.00):
 		alert = True; subject = "Suhu DROP"
+    elif  (t >29.00):
+        alert = False;
 	elif (t > 39.00):
 		alert = True; subject = "Suhu NAIK"
 	else:
-		alert = False
+		alert = False;
 
 	global newsubject
 	if (alert):
