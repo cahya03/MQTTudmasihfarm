@@ -11,6 +11,7 @@ Keep_Alive_Interval = 60
 
 def on_message(mosq, obj, msg):
 	Sensor_Data_Handler(msg.topic, msg.payload)
+	time.sleep(120)
 
 def on_connect(self, mosq, obj, rc):
 	if rc != 0:
